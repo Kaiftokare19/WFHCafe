@@ -27,7 +27,7 @@ const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({
   
   // Define video sources based on device
   const desktopVideoSrc = "https://salmon-selective-jackal-307.mypinata.cloud/ipfs/bafybeic4uhvpsvw2db2f54uaqa6gl4varqn7dsbmtcjgzzekf4dkl52v5q";
-  const mobileVideoSrc = "https://salmon-selective-jackal-307.mypinata.cloud/ipfs/bafybeibxbirgobzg7zsymelx56znifdfpkjftfme2n7wudhy5ienwbu4cy";
+  const mobileVideoSrc = "https://salmon-selective-jackal-307.mypinata.cloud/ipfs/bafybeiacbo6j7j4ox4hfayizxck54fdhhbbnzsr7ldsrqioecn7p44l2ue";
   const fallbackImageSrc = "https://salmon-selective-jackal-307.mypinata.cloud/ipfs/QmREY2P5Gg3FWQvYJdGz95HKQommnb8kHRw6KuhSurxDnf";
 
   const handleLoadedMetadata = () => {
