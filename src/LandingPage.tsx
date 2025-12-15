@@ -32,7 +32,9 @@ const LandingPage: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/early-access', {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+    
+      const response = await fetch(`${backendUrl}/early-access`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
