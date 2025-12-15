@@ -1,0 +1,20 @@
+{
+  "short_name": "WFHCafe",
+  "name": "WFHCafe - Your Office is Where the Coffee is",
+  "icons": [
+    {
+      "src": "WFHCafe_WObg.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "WFHCafe_WObg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#051814",
+  "background_color": "#051814"
+}
