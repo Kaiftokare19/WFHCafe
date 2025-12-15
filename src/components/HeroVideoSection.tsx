@@ -42,7 +42,10 @@ const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({
     
     const updateVideoFrame = (progress: number) => {
       if (videoDuration > 0 && videoRef.current) {
-        videoRef.current.currentTime = videoDuration * progress;
+        // Only update video frame on desktop
+        if (!isMobile) {
+          videoRef.current.currentTime = videoDuration * progress;
+        }
       }
     };
     
@@ -56,7 +59,7 @@ const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({
       // Use requestAnimationFrame for smoother performance
       if (!ticking) {
         requestAnimationFrame(() => {
-          // 1. Determine Position State
+          // 1. Determine Position State (works for both mobile and desktop)
           if (rect.top <= 0 && rect.bottom >= windowHeight) {
             setPositionState('fixed');
           } 
@@ -74,7 +77,7 @@ const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({
           let progress = scrolledPixels / totalDistance;
           progress = Math.max(0, Math.min(1, progress));
           
-          // 3. Update Video Frame
+          // 3. Update Video Frame (only on desktop)
           updateVideoFrame(progress);
           
           ticking = false;
@@ -93,7 +96,34 @@ const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [videoDuration]);
+  }, [videoDuration, isMobile]); // Add isMobile to dependency array
+
+  // Handle mobile video playback
+  useEffect(() => {
+    if (isMobile && videoRef.current) {
+      // Play video normally on mobile
+      videoRef.current.play().catch(e => {
+        console.log("Autoplay prevented:", e);
+        // Fallback: play on user interaction
+        const playOnInteraction = () => {
+          if (videoRef.current) {
+            videoRef.current.play();
+            document.removeEventListener('click', playOnInteraction);
+            document.removeEventListener('touchstart', playOnInteraction);
+          }
+        };
+        document.addEventListener('click', playOnInteraction);
+        document.addEventListener('touchstart', playOnInteraction);
+      });
+      
+      // Loop the video on mobile
+      videoRef.current.loop = true;
+    } else if (!isMobile && videoRef.current) {
+      // On desktop, ensure video doesn't auto-play
+      videoRef.current.pause();
+      videoRef.current.loop = false;
+    }
+  }, [isMobile]);
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -108,65 +138,57 @@ const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({
     <Box
       ref={containerRef}
       sx={{
-        height: '200vh',
+        height: '200vh', // Keep 200vh for both mobile and desktop
         width: '100%',
         position: 'relative',
         bgcolor: isDark ? '#000000' : '#FFFFFF',
         // Add padding-top for sticky navbar only for desktop
-        // Removed for mobile, only apply for desktop (lg and above)
         pt: { xs: 0, sm: 0, md: 0, lg: '64px' },
       }}
     >
       <Box
-  sx={{
-    width: '100%',
-    height: '100vh',
-    overflow: 'hidden',
-    zIndex: 10,
-    // Allow video to show full width on mobile
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-    // DYNAMIC POSITIONING LOGIC
-    ...(positionState === 'fixed' && {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-    }),
-    ...(positionState === 'start' && {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-    }),
-    ...(positionState === 'end' && {
-      position: 'absolute',
-      bottom: 0, 
-      left: 0,
-    }),
-  }}
->
+        sx={{
+          width: '100%',
+          height: '100vh',
+          overflow: 'hidden',
+          zIndex: 10,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          
+          // DYNAMIC POSITIONING LOGIC - Works for both mobile and desktop
+          ...(positionState === 'fixed' && {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+          }),
+          ...(positionState === 'start' && {
+            position: 'absolute',
+            top: 0,
+            left: 0,
+          }),
+          ...(positionState === 'end' && {
+            position: 'absolute',
+            bottom: 0, 
+            left: 0,
+          }),
+        }}
+      >
         <video
-  ref={videoRef}
-  muted
-  playsInline
-  preload="auto"
-  onLoadedMetadata={handleLoadedMetadata}
-  style={{
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    // Optimize for performance
-    transform: 'translateZ(0)',
-    backfaceVisibility: 'hidden',
-    // Slight adjustment for mobile to show more frame
-    ...(isMobile && {
-      height: '100%',
-      width: 'auto',
-      minWidth: '100%',
-    }),
-  }}
->
+          ref={videoRef}
+          muted
+          playsInline
+          preload="auto"
+          onLoadedMetadata={handleLoadedMetadata}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            // Optimize for performance
+            transform: 'translateZ(0)',
+            backfaceVisibility: 'hidden',
+          }}
+        >
           {/* Mobile video for screens up to 900px */}
           <source 
             src={mobileVideoSrc}
