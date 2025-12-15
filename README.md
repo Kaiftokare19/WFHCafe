@@ -1,46 +1,198 @@
-# Getting Started with Create React App
+# WFHCafe – Your Office is Where the Coffee Is ☕💻
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+WFHCafe is a **social networking platform for remote workers, freelancers, and professionals** who work from cafés and want to build meaningful real-world connections.
 
-## Available Scripts
+It bridges the gap between **remote work and human networking** by turning cafés into micro workspaces and community hubs.
 
-In the project directory, you can run:
+> Think **LinkedIn × Meetup × Google Maps**, built for café culture.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## This is the Early Access version
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This Readme.md is created as per the Application which is in the Developing Stage.
+**Purpose :** To show the early birds the future architecture of the application would look something like this !!! 
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Vision
 
-### `npm run build`
+Remote work shouldn’t mean working alone.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+WFHCafe enables people to:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Discover **work-friendly cafés**
+* See **who’s working nearby**
+* Connect, collaborate, and build communities
+* Network organically — without forced meetings or cold DMs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🌟 Core Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* ☕ **Café Discovery** (WiFi, power, vibe, crowd)
+* 👨‍💻 **Live Presence** – see who’s working at the same café
+* 🤝 **Social Networking** for remote professionals
+* 🧑‍🤝‍🧑 **Community Building** (city-wise & interest-based)
+* 🔐 **Secure Authentication** (Google OAuth + Local Auth)
+* 🌓 **Dark / Light Mode**
+* 📱 **Fully Responsive UI**
+* ⚡ **Fast & modern MERN stack**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🛠 Tech Stack
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Frontend**
 
-## Learn More
+* React + TypeScript
+* Vite
+* Material UI
+* Context API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Backend**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+* JWT Authentication
+* Google OAuth 2.0
+
+---
+
+## 📦 Repositories
+
+* **Frontend Repo:**
+  [https://github.com/Kaiftokare19/WFHCafeDev-Frontend.git](https://github.com/Kaiftokare19/WFHCafeDev-Frontend.git)
+
+* **Backend Repo:**
+  [https://github.com/Kaiftokare19/WFHCafeDev-Backend.git](https://github.com/Kaiftokare19/WFHCafeDev-Backend.git)
+
+---
+
+## ⚙️ Prerequisites
+
+* Node.js (v16 or higher)
+* MongoDB (Local or Atlas)
+* Google Cloud Console account (for OAuth)
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repositories
+
+```bash
+# Frontend
+git clone https://github.com/Kaiftokare19/WFHCafeDev-Frontend.git
+
+# Backend
+git clone https://github.com/Kaiftokare19/WFHCafeDev-Backend.git
+```
+
+---
+
+### 2️⃣ Install dependencies
+
+```bash
+# Frontend
+cd WFHCafeDev-Frontend
+npm install
+
+# Backend
+cd WFHCafeDev-Backend
+npm install
+```
+
+---
+
+### 3️⃣ Environment Variables
+
+Create a `.env` file in the backend root and configure:
+
+```env
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+---
+
+### 4️⃣ Run the application
+
+```bash
+# Backend
+npm run dev
+
+# Frontend
+npm run dev
+```
+
+---
+
+## 🔌 Application Status
+
+🚀 **Server running on port 3000**
+🌐 **Frontend URL:** [http://localhost:5173](http://localhost:5173)
+
+### 📝 API Endpoints
+
+* **Auth:** [http://localhost:3000/api/auth](http://localhost:3000/api/auth)
+* **User:** [http://localhost:3000/api/user](http://localhost:3000/api/user)
+* **Explore:** [http://localhost:3000/api/explore](http://localhost:3000/api/explore)
+* **Community:** [http://localhost:3000/api/community](http://localhost:3000/api/community)
+* **Posts:** [http://localhost:3000/api/posts](http://localhost:3000/api/posts)
+* **Health Check:** [http://localhost:3000/health](http://localhost:3000/health)
+* **Debug:** [http://localhost:3000/debug-env](http://localhost:3000/debug-env)
+
+✅ **MongoDB connected successfully**
+
+---
+
+## 🔐 Authentication
+
+* Google OAuth 2.0
+* Local authentication with hashed passwords
+* JWT-based session management
+* Secure protected routes
+
+---
+
+## 🧠 Why WFHCafe?
+
+Most platforms help you **scroll**.
+WFHCafe helps you **meet**.
+
+It’s built for:
+
+* Real connections
+* Real places
+* Real communities
+
+---
+
+## 🚧 Status
+
+WFHCafe is currently in **active development**.
+Early Access users are helping shape the product.
+
+---
+
+## 🤝 Contributing
+
+Contributions, feedback, and ideas are welcome.
+Feel free to open issues or submit pull requests.
+
+---
+
+## 📬 Contact
+
+Built with ☕️ & ❤️ by the WFHCafe team.
+Follow the journey and build-in-public updates on X.
+
+## 🤝 Social Handles
+
+**X** [https://x.com/WFHCafee](https://x.com/WFHCafee)
+**Give me Feedbacks at :** [https://docs.google.com/forms/d/1Q15R1_ow38WvtlOjI3OX89nfCgn5h8Aaq7mMzddXQp8/edit?pli=1](https://docs.google.com/forms/d/1Q15R1_ow38WvtlOjI3OX89nfCgn5h8Aaq7mMzddXQp8/edit?pli=1)
