@@ -1,3 +1,5 @@
+[![WFHCafe Demo](assets/demo.png)](https://salmon-selective-jackal-307.mypinata.cloud/ipfs/bafybeic4uhvpsvw2db2f54uaqa6gl4varqn7dsbmtcjgzzekf4dkl52v5q)
+
 # WFHCafe – Your Office is Where the Coffee Is ☕💻
 
 WFHCafe is a **social networking platform for remote workers, freelancers, and professionals** who work from cafés and want to build meaningful real-world connections.
