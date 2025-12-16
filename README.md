@@ -187,6 +187,9 @@ Early Access users are helping shape the product.
 Contributions, feedback, and ideas are welcome.
 Feel free to open issues or submit pull requests.
 
+
+**Give me Feedbacks at :** [https://docs.google.com/forms/d/1Q15R1_ow38WvtlOjI3OX89nfCgn5h8Aaq7mMzddXQp8/edit?pli=1](https://docs.google.com/forms/d/1Q15R1_ow38WvtlOjI3OX89nfCgn5h8Aaq7mMzddXQp8/edit?pli=1)
+
 ---
 
 ## 📬 Contact
@@ -197,4 +200,3 @@ Follow the journey and build-in-public updates on X.
 ## 🤝 Social Handles
 
 **X** [https://x.com/WFHCafee](https://x.com/WFHCafee)
-**Give me Feedbacks at :** [https://docs.google.com/forms/d/1Q15R1_ow38WvtlOjI3OX89nfCgn5h8Aaq7mMzddXQp8/edit?pli=1](https://docs.google.com/forms/d/1Q15R1_ow38WvtlOjI3OX89nfCgn5h8Aaq7mMzddXQp8/edit?pli=1)
